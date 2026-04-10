@@ -1,0 +1,14 @@
+name: Wake Streamlit App
+
+on:
+  schedule:
+    - cron: "0 */5 * * *"   # every 5 hours
+  workflow_dispatch:
+
+jobs:
+  wakeup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Ping Streamlit App
+        run: curl https://hpz-razorpay-cashfree-automation.streamlit.app/
