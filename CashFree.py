@@ -90,7 +90,7 @@ def build_journal_xlsx(merged):
         row_fill = styles['credit_fill'] if is_credit else styles['debit_fill']
         
         date_cell = ws.cell(row=ri, column=1, value=row.get('Settlement Date'))
-        date_cell.number_format = 'DD/MM/YYYY'
+        date_cell.number_format = 'DD.MM.YYYY'
         
         cells = [
             date_cell,
