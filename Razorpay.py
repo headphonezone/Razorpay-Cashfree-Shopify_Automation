@@ -88,7 +88,7 @@ def create_single_excel(rows, headers, sheet_name, is_journal=False):
                 is_cr = "Receivable" not in str(row[1])
                 cell.fill = styles['credit_fill'] if is_cr else styles['debit_fill']
             if ci == 1 and isinstance(val, (datetime.date, datetime.datetime)):
-                cell.number_format = 'DD/MM/YYYY'
+                cell.number_format = 'DD.MM.YYYY'
                 
     buf = io.BytesIO()
     wb.save(buf)
