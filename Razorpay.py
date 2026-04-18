@@ -137,7 +137,7 @@ if rp_file and sh_file:
                     # 1. Prepare Journal Data
                     journal_rows.append([
                         s_date, 
-                        email if is_cr else 'Razorpay Receivable', 
+                        email if is_cr else 'Razorpay Payment Receivable', 
                         'Razorpay Receivable' if is_cr else email, 
                         order_no, row['amount'], receipt
                     ])
@@ -150,7 +150,7 @@ if rp_file and sh_file:
 
                 # 3. Prepare Tax Data
                 total_tax_comm = round(rp_df_full['fee (exclusive tax)'].sum() + rp_df_full['tax'].sum(), 2)
-                tax_rows = [[s_date, 'Razorpay Receivable', 'Razorpay Commission Paid', '', total_tax_comm,]]
+                tax_rows = [[s_date, 'Razorpay Payment Receivable', 'Razorpay Commission Paid', '', total_tax_comm,]]
 
                 # Store in Session State
                 st.session_state.rp_results = {
